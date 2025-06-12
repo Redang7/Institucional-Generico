@@ -1,0 +1,246 @@
+@import url(./globalStyles.css);
+
+/* ===== HEADER ===== */
+.cabecalho--container {
+    padding: clamp(16px, 3vw, 24px) clamp(24px, 5vw, 48px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #0f3486;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #191C1F;
+}
+
+main {
+    margin-top: clamp(70px, 10vh, 100px);
+}
+
+.section--banner {
+    background-color: #212529;
+    padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
+    text-align: left;
+}
+
+.banner__title {
+    max-width: 700px;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.banner__title span {
+    color: #6C63FF;
+}
+
+.banner__description {
+    max-width: 600px;
+    margin: 20px 0;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+
+.section--about {
+    padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
+    background-color: #191C1F;
+}
+
+
+.section--faq {
+    padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
+    background-color: #212529;
+}
+
+.faq__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.faq__left {
+    flex: 1 1 40%;
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+}
+
+.faq__list {
+    flex: 1 1 55%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+.faq__item {
+    margin-bottom: 24px;
+}
+
+.faq__item>h3 {
+    color: #6C63FF;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+.faq__description {
+    font-size: clamp(1rem, 2.5vw, 1.563rem);
+}
+
+.faq__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+
+.section--comments {
+    padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
+    background-color: #212529;
+}
+
+.comments__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.comments__intro {
+    flex: 1 1 40%;
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+    background-color: #4c6ef5;
+    border-radius: 10px;
+}
+
+.comments__list {
+    flex: 1 1 55%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comments__item {
+    background-color: #202020;
+    padding: clamp(16px, 4vw, 24px);
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.comments__description {
+    margin: 5px;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.comments__author>h3 {
+    color: #fff;
+}
+
+.comments__author {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+
+.footer {
+    padding: clamp(24px, 5vw, 48px);
+    text-align: center;
+    background-color: #212529;
+}
+
+
+.modal--info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    border: none;
+    z-index: 9999;
+}
+
+.modal--info[open] {
+    opacity: 1;
+    transform: translate(-65%, -60%) scale(1);
+}
+
+.modal--info::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal__submit {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal--info input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #2c2c2c;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+
+    .faq__container,
+    .comments__container {
+        flex-direction: column;
+    }
+
+    .faq__left,
+    .comments__intro {
+        position: static;
+        top: auto;
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho--container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .section--banner,
+    .section--about,
+    .section--faq,
+    .section--comments,
+    .footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .faq__title {
+        text-align: center;
+    }
+}
