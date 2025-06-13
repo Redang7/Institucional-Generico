@@ -1,10 +1,7 @@
 @import url(./globalStyles.css);
 
-/* ===== HEADER ===== */
 .cabecalho--container {
     padding: clamp(16px, 3vw, 24px) clamp(24px, 5vw, 48px);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     border-bottom: 4px solid #0f3486;
     position: fixed;
@@ -15,37 +12,73 @@
     background-color: #191C1F;
 }
 
+.header__content {
+    display: flex;
+    justify-content: space-between;
+}
+
 main {
     margin-top: clamp(70px, 10vh, 100px);
 }
 
 .section--banner {
+    display: flex;
+    justify-content: center;
     background-color: #212529;
     padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
-    text-align: left;
+    text-align: center;
+}
+
+.banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
 }
 
 .banner__title {
     max-width: 700px;
     font-size: clamp(1.8rem, 5vw, 3rem);
-}
-
-.banner__title span {
-    color: #6C63FF;
+    margin: 0 auto;
 }
 
 .banner__description {
     max-width: 600px;
-    margin: 20px 0;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 20px auto;
 }
-
 
 .section--about {
     padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
     background-color: #191C1F;
+    display: flex;
+    justify-content: center;
 }
 
+.about__content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.about__title {
+    flex: 1;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: bold;
+    color: #fff;
+}
+
+.about__description {
+    flex: 2;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #bcbcbc;
+    line-height: 1.6;
+}
 
 .section--faq {
     padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
@@ -55,8 +88,9 @@ main {
 .faq__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
-    align-items: flex-start;
+    column-gap: 60px;
+    row-gap: 40px;
+    align-items: center;
 }
 
 .faq__left {
@@ -67,6 +101,9 @@ main {
 }
 
 .faq__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1 1 55%;
     list-style: none;
     padding: 0;
@@ -78,7 +115,7 @@ main {
     margin-bottom: 24px;
 }
 
-.faq__item>h3 {
+.faq__item > h3 {
     color: #6C63FF;
     font-size: clamp(1.25rem, 3vw, 1.875rem);
 }
@@ -90,7 +127,6 @@ main {
 .faq__title {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
-
 
 .section--comments {
     padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 48px);
@@ -133,7 +169,7 @@ main {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-.comments__author>h3 {
+.comments__author > h3 {
     color: #fff;
 }
 
@@ -141,13 +177,11 @@ main {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-
 .footer {
     padding: clamp(24px, 5vw, 48px);
     text-align: center;
     background-color: #212529;
 }
-
 
 .modal--info {
     position: fixed;
@@ -168,7 +202,7 @@ main {
 
 .modal--info[open] {
     opacity: 1;
-    transform: translate(-65%, -60%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .modal--info::backdrop {
