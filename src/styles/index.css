@@ -86,24 +86,60 @@ main {
 }
 
 .faq__container {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 60px;
-    row-gap: 40px;
-    align-items: center;
+    gap: 10px 50px;
 }
 
 .faq__left {
-    flex: 1 1 40%;
-    position: sticky;
-    top: 120px;
-    align-self: flex-start;
-}
-
-.faq__list {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1 1 clamp(280px, 40%, 400px);
+    max-width: 500px;
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+
+}
+
+.faq__list {
+    flex: 1 1 clamp(320px, 55%, 700px);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq__item {
+    margin-bottom: 24px;
+}
+
+.faq__item>h3 {
+    color: #ffffff;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-weight: 700;
+}
+
+.faq__description {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #ccc;
+}
+
+.faq__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #ffffff;
+}
+
+.faq__btn {
+    margin-top: 24px;
+}
+
+.faq__btn:hover {
+    background-color: #3b5bdb;
+}
+
+.faq__list {
     flex: 1 1 55%;
     list-style: none;
     padding: 0;
@@ -112,20 +148,20 @@ main {
 }
 
 .faq__item {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    text-align: center;
 }
 
-.faq__item > h3 {
-    color: #6C63FF;
+.faq__item>h3 {
+    color: #ffffff;
     font-size: clamp(1.25rem, 3vw, 1.875rem);
+    margin-bottom: 8px;
 }
 
-.faq__description {
-    font-size: clamp(1rem, 2.5vw, 1.563rem);
-}
-
-.faq__title {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+.faq__item>p {
+    color: #bfbfbf;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
 }
 
 .section--comments {
@@ -137,7 +173,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    align-items: flex-start;
+    align-items: left;
+    margin: auto;
+    padding: 40px;
 }
 
 .comments__intro {
@@ -147,6 +185,8 @@ main {
     align-self: flex-start;
     background-color: #4c6ef5;
     border-radius: 10px;
+    padding: 20px;
+    text-align: left;
 }
 
 .comments__list {
@@ -169,7 +209,7 @@ main {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-.comments__author > h3 {
+.comments__author>h3 {
     color: #fff;
 }
 
@@ -178,9 +218,11 @@ main {
 }
 
 .footer {
+    display: flex;
+    justify-content: center;
     padding: clamp(24px, 5vw, 48px);
     text-align: center;
-    background-color: #212529;
+    background-color: #191C1F;
 }
 
 .modal--info {
@@ -202,7 +244,7 @@ main {
 
 .modal--info[open] {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-75%, -50%) scale(1);
 }
 
 .modal--info::backdrop {
@@ -268,8 +310,7 @@ main {
     .section--banner,
     .section--about,
     .section--faq,
-    .section--comments,
-    .footer {
+    .section--comments {
         padding-left: 16px;
         padding-right: 16px;
     }
